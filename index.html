@@ -3,78 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cobb Hu · Home</title>
-<meta property="og:title" content="Cobb Hu — Home">
-<meta property="og:description" content="13F Smart Money Dashboard · Creator Commerce Portfolio">
+<title>Hub · Variant A — Swiss Klein Blue</title>
 <style>
-:root{
-  --bg:#0b0b0e;
-  --card:#141419;
-  --ink:#f2f2f5;
-  --muted:#9a9aa5;
-  --blue:#3b82f6;
-  --orange:#f97316;
-  --green:#22c55e;
-  --hair:#26262e;
-  --font:-apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",Helvetica,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:var(--font);background:var(--bg);color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;line-height:1.5;-webkit-font-smoothing:antialiased;}
-.wrap{max-width:880px;width:100%;padding:48px 28px;text-align:center;}
-.eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:0.18em;color:var(--muted);text-transform:uppercase;border:1px solid var(--hair);padding:5px 14px;border-radius:999px;margin-bottom:28px;}
-h1{font-size:clamp(40px,7vw,72px);font-weight:800;letter-spacing:-0.03em;line-height:1.05;}
-h1 .accent{background:linear-gradient(90deg,var(--blue),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent;}
-.sub{margin-top:16px;color:var(--muted);font-size:15px;max-width:560px;margin-left:auto;margin-right:auto;}
-.lang{margin-top:8px;font-size:12px;color:#6b6b76;}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:52px;}
-.card{display:block;text-align:left;text-decoration:none;background:var(--card);border:1px solid var(--hair);padding:28px 26px;border-radius:14px;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;position:relative;overflow:hidden;}
-.card:hover{transform:translateY(-4px);text-decoration:none;}
-.card .tag{font-size:11px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:3px 10px;border-radius:999px;display:inline-block;}
-.card.one .tag{color:var(--blue);border:1px solid rgba(59,130,246,.5);}
-.card.two .tag{color:var(--orange);border:1px solid rgba(249,115,22,.5);}
-.card h2{font-size:22px;font-weight:700;margin-top:14px;letter-spacing:-0.01em;}
-.card p{margin-top:8px;color:var(--muted);font-size:13.5px;}
-.card .go{margin-top:18px;font-size:13px;font-weight:700;color:var(--ink);display:inline-flex;align-items:center;gap:6px;}
-.card.one:hover{border-color:var(--blue);box-shadow:0 8px 40px -12px rgba(59,130,246,.35);}
-.card.two:hover{border-color:var(--orange);box-shadow:0 8px 40px -12px rgba(249,115,22,.35);}
-.card.one .go{color:var(--blue);}
-.card.two .go{color:var(--orange);}
-.foot{margin-top:56px;color:#6b6b76;font-size:12px;display:flex;justify-content:center;gap:22px;flex-wrap:wrap;}
-.foot a{color:#8f8f9a;text-decoration:none;}
-.foot a:hover{color:var(--ink);text-decoration:underline;}
-@media (max-width:640px){
-  .grid{grid-template-columns:1fr;}
-  .wrap{padding:36px 20px;}
-}
+/* A: 瑞士国际主义·克莱因蓝（与13F看板视觉统一）off-white 米白底/直角/1px hairline/大字号对比 */
+:root{--blue:#002FA7;--ink:#111;--muted:#6b6b6b;--hair:#e0e0e0;--bg:#ffffff;--font:-apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",Helvetica,"Noto Sans SC",sans-serif;}
+*{margin:0;padding:0;box-sizing:border-box;border-radius:0!important;}
+body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;}
+a{text-decoration:none;color:inherit;}
+.wrap{max-width:1200px;margin:0 auto;padding:88px 32px;}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:0.14em;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:40px;display:flex;justify-content:space-between;}
+h1{font-size:clamp(44px,7vw,96px);font-weight:700;letter-spacing:-0.035em;line-height:0.98;color:var(--blue);}
+.sub{margin-top:20px;color:var(--muted);font-size:14px;max-width:520px;}
+.lang{font-size:12px;color:var(--muted);margin-top:6px;}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);margin-top:64px;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
+.card{padding:32px 28px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transition:background .12s,color .12s;}
+.card:hover{background:var(--blue);}
+.card:hover h2,.card:hover p,.card:hover .go,.card:hover .tag{color:#fff;}
+.tag{font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--blue);text-transform:uppercase;}
+.card:hover .tag{color:#9db4e8;}
+h2{font-size:26px;font-weight:700;margin-top:16px;letter-spacing:-0.01em;}
+.card p{margin-top:10px;color:var(--muted);font-size:13.5px;}
+.go{margin-top:22px;font-size:13px;font-weight:700;color:var(--blue);}
+.foot{margin-top:48px;color:var(--muted);font-size:12px;display:flex;gap:24px;}
+.foot a{color:var(--blue);}
+.foot a:hover{text-decoration:underline;}
+@media(max-width:680px){.grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="eyebrow">Cobb Hu · Personal Site</div>
-  <h1>Data-driven<br><span class="accent">Creator Commerce</span></h1>
-  <p class="sub">US TikTok Shop creator engine · DTC e-commerce · SEC data tools</p>
-  <p class="lang">数据驱动的创作者电商 / 中文 · English</p>
-
+  <div class="eyebrow"><span>Cobb Hu</span><span>Personal Site</span></div>
+  <h1>13F<br>Smart Money</h1>
+  <p class="sub">Creator commerce, US TikTok Shop, DTC e-commerce, SEC data tools — data-driven, bilingual.</p>
+  <p class="lang">数据驱动的创作者电商 · 中文 / English</p>
   <div class="grid">
-    <a class="card one" href="https://letobtc100-hodl.github.io/13f-dashboard/">
-      <span class="tag">Research Tool · 研究工具</span>
+    <a class="card" href="https://letobtc100-hodl.github.io/13f-dashboard/">
+      <div class="tag">Research Tool</div>
       <h2>13F 聪明钱工作台</h2>
-      <p>20 家华尔街头部机构 × 最近 4 季度真实持仓 · SEC EDGAR 免费数据 · 中英文切换 · 每季度自动更新</p>
-      <span class="go">打开看板 →</span>
+      <p>20 家华尔街头部机构 × 4 季度真实持仓 · SEC 免费数据 · 中英文切换</p>
+      <div class="go">打开看板 →</div>
     </a>
-    <a class="card two" href="https://letobtc100-hodl.github.io/portfolio/">
-      <span class="tag">Portfolio · 作品集</span>
-      <h2>Creator Commerce Portfolio</h2>
-      <p>US TikTok Shop creator engine（200+ 创作者）· HiddenEncounter DTC 独立站 · USC MSBA</p>
-      <span class="go">查看作品集 →</span>
+    <a class="card" href="https://letobtc100-hodl.github.io/portfolio/">
+      <div class="tag">Portfolio</div>
+      <h2>Creator Commerce</h2>
+      <p>US TikTok Shop creator engine（200+ 创作者）· DTC 独立站 · USC MSBA</p>
+      <div class="go">查看作品集 →</div>
     </a>
   </div>
-
-  <div class="foot">
-    <a href="https://github.com/letobtc100-hodl" target="_blank" rel="noopener">GitHub</a>
-    <a href="mailto:cobblhu36@163.com">Email</a>
-    <span>© 2026 Cobb Hu</span>
-  </div>
+  <div class="foot"><a href="https://github.com/letobtc100-hodl">GitHub</a><a href="mailto:cobblhu36@163.com">Email</a><span>© 2026 Cobb Hu</span></div>
 </div>
 </body>
 </html>
