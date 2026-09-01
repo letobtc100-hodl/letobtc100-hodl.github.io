@@ -34,7 +34,7 @@ img{display:block;max-width:100%}
 .hero{position:relative;overflow:hidden;padding:88px 0 72px;border-bottom:1px solid var(--ink);
   background:
     linear-gradient(90deg,#fff 0%,rgba(255,255,255,.94) 36%,rgba(255,255,255,.8) 50%,rgba(255,255,255,.2) 66%,rgba(255,255,255,0) 76%),
-    url('images/hero-bg-1.png') no-repeat right center/cover}
+    url('images/hero-bg-companies-1.png') no-repeat right center/cover}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
 h1{font-size:clamp(56px,9vw,112px);font-weight:800;letter-spacing:-.04em;line-height:.95;color:var(--blue)}
 .role{margin-top:22px;font-size:17px;font-weight:600}
@@ -78,6 +78,16 @@ h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em;line-hei
 .work-main:hover .work-go,.tile:hover .work-go{color:#fff}
 .work-main:hover img,.tile:hover img{opacity:.9}
 
+/* BTC/ETH 视觉带 */
+.band{padding:0 0 84px}
+.band-img{display:block;position:relative;height:46vh;min-height:340px;border:1px solid var(--ink);
+  background:url('images/hero-bg-crypto-1.png') no-repeat center/cover;overflow:hidden;transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.band-img:hover{transform:scale(1.008)}
+.band-cap{position:absolute;left:0;bottom:0;padding:12px 18px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--blue);background:rgba(255,255,255,.88)}
+.band-cap .arr{transition:transform .18s;display:inline-block}
+.band-img:hover .band-cap .arr{transform:translateX(4px)}
+
 /* about 瑞士目录 */
 .dir{border-top:1px solid var(--ink)}
 .dir-row{display:grid;grid-template-columns:220px 1fr;padding:20px 0;border-bottom:1px solid var(--hair)}
@@ -102,6 +112,7 @@ footer{border-top:1px solid var(--ink);padding:34px 0 48px}
 @media(max-width:860px){
   .hero-grid{grid-template-columns:1fr;gap:32px}
   .hero{padding:56px 0 48px}
+  .band-img{height:32vh;min-height:240px}
   .work-main{grid-template-columns:1fr}
   .work-main img{min-height:0;aspect-ratio:16/10}
   .work-duo{grid-template-columns:1fr}
@@ -186,6 +197,15 @@ footer{border-top:1px solid var(--ink);padding:34px 0 48px}
           </div>
           <span class="work-go" data-zh="查看案例" data-en="View">查看案例 <span class="arr">→</span></span>
         </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- BTC/ETH 视觉带 -->
+  <section class="band">
+    <div class="wrap">
+      <a class="band-img reveal" href="https://letobtc100-hodl.github.io/letoflow/">
+        <span class="band-cap">BTC · ETH · 现货 ETF 资金流 <span class="arr">→</span></span>
       </a>
     </div>
   </section>
