@@ -3,54 +3,258 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hub · Variant A — Swiss Klein Blue</title>
+<meta name="description" content="Cobb Hu - data tools for equities, crypto and AI. SEC 13F, ETF flows, AI-powered research.">
+<meta property="og:title" content="Cobb Hu · Equities · Crypto · AI">
+<meta property="og:description" content="Data tools for equities, crypto and AI research. Bilingual.">
+<meta property="og:image" content="https://letobtc100-hodl.github.io/images/work-13f.png">
+<title>Cobb Hu · Equities · Crypto · AI</title>
 <style>
-/* A: 瑞士国际主义·克莱因蓝（与13F看板视觉统一）off-white 米白底/直角/1px hairline/大字号对比 */
-:root{--blue:#002FA7;--ink:#111;--muted:#6b6b6b;--hair:#e0e0e0;--bg:#ffffff;--font:-apple-system,BlinkMacSystemFont,"Inter","Helvetica Neue",Helvetica,"Noto Sans SC",sans-serif;}
-*{margin:0;padding:0;box-sizing:border-box;border-radius:0!important;}
-body{font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased;}
-a{text-decoration:none;color:inherit;}
-.wrap{max-width:1200px;margin:0 auto;padding:88px 32px;}
-.eyebrow{font-size:12px;font-weight:700;letter-spacing:0.14em;color:var(--muted);text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:10px;margin-bottom:40px;display:flex;justify-content:space-between;}
-h1{font-size:clamp(44px,7vw,96px);font-weight:700;letter-spacing:-0.035em;line-height:0.98;color:var(--blue);}
-.sub{margin-top:20px;color:var(--muted);font-size:14px;max-width:520px;}
-.lang{font-size:12px;color:var(--muted);margin-top:6px;}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);margin-top:64px;border-top:1px solid var(--ink);border-left:1px solid var(--ink);}
-.card{padding:32px 28px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);transition:background .12s,color .12s;}
-.card:hover{background:var(--blue);}
-.card:hover h2,.card:hover p,.card:hover .go,.card:hover .tag{color:#fff;}
-.tag{font-size:11px;font-weight:700;letter-spacing:0.12em;color:var(--blue);text-transform:uppercase;}
-.card:hover .tag{color:#9db4e8;}
-h2{font-size:26px;font-weight:700;margin-top:16px;letter-spacing:-0.01em;}
-.card p{margin-top:10px;color:var(--muted);font-size:13.5px;}
-.go{margin-top:22px;font-size:13px;font-weight:700;color:var(--blue);}
-.foot{margin-top:48px;color:var(--muted);font-size:12px;display:flex;gap:24px;}
-.foot a{color:var(--blue);}
-.foot a:hover{text-decoration:underline;}
-@media(max-width:680px){.grid{grid-template-columns:1fr;}}
+:root{--blue:#002FA7;--ink:#111;--muted:#6b6b6b;--hair:#e6e6e6;--bg:#fff;
+--sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+--mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Cascadia Code",monospace;}
+*{margin:0;padding:0;box-sizing:border-box;border-radius:0!important}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* 顶栏 */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
+.top-in{max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-size:15px;font-weight:800;letter-spacing:-.01em}
+.brand .b-dot{color:var(--blue)}
+.nav{display:flex;align-items:center;gap:22px}
+.nav a{font-size:13px;color:var(--muted);transition:color .15s}
+.nav a:hover{color:var(--blue)}
+.lang-btn{border:1px solid var(--hair);background:var(--bg);font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding:5px 10px;cursor:pointer;color:var(--ink);transition:all .15s}
+.lang-btn:hover{border-color:var(--blue);color:var(--blue)}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:88px 0 72px;border-bottom:1px solid var(--ink);
+  background:
+    linear-gradient(90deg,#fff 0%,rgba(255,255,255,.94) 36%,rgba(255,255,255,.8) 50%,rgba(255,255,255,.2) 66%,rgba(255,255,255,0) 76%),
+    url('images/hero-bg-1.png') no-repeat right center/cover}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
+h1{font-size:clamp(56px,9vw,112px);font-weight:800;letter-spacing:-.04em;line-height:.95;color:var(--blue)}
+.role{margin-top:22px;font-size:17px;font-weight:600}
+.hero-right{padding-top:14px}
+.bio{font-size:15px;color:var(--muted);max-width:34ch}
+.ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-block;padding:11px 22px;font-size:14px;font-weight:700;border:1px solid var(--ink);transition:all .18s}
+.btn-primary{background:var(--blue);border-color:var(--blue);color:#fff}
+.btn-primary:hover{background:#001f77;border-color:#001f77}
+.btn-ghost:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* 章节 */
+section{padding:84px 0}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+
+/* 项目一：通栏分栏 */
+.work-main{display:grid;grid-template-columns:1.15fr 1fr;border:1px solid var(--ink);margin-bottom:18px;background:var(--bg)}
+.work-main img{width:100%;height:100%;object-fit:cover;min-height:340px}
+.work-txt{padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
+.work-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.work-name{font-size:24px;font-weight:800;letter-spacing:-.01em;margin-top:10px}
+.work-desc{font-size:14px;color:var(--muted);margin-top:10px;max-width:42ch}
+.work-go{font-size:13px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:8px}
+.work-go .arr{transition:transform .18s}
+.work-main:hover .work-go .arr,.tile:hover .work-go .arr{transform:translateX(4px)}
+
+/* 项目二三：双列 */
+.work-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.tile{border:1px solid var(--ink);background:var(--bg);display:flex;flex-direction:column}
+.tile img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--hair)}
+.tile .work-txt{padding:26px 26px 30px;flex:1}
+.tile .work-name{font-size:20px}
+
+/* 悬停克莱因蓝填充（品牌签名交互） */
+.work-main,.tile{transition:background .22s,color .22s}
+.work-main:hover,.tile:hover{background:var(--blue)}
+.work-main:hover .work-txt *,.tile:hover .work-txt *{color:#fff}
+.work-main:hover .work-tag,.tile:hover .work-tag{color:#9db4e8}
+.work-main:hover .work-go,.tile:hover .work-go{color:#fff}
+.work-main:hover img,.tile:hover img{opacity:.9}
+
+/* about 瑞士目录 */
+.dir{border-top:1px solid var(--ink)}
+.dir-row{display:grid;grid-template-columns:220px 1fr;padding:20px 0;border-bottom:1px solid var(--hair)}
+.dir-row:last-child{border-bottom:none}
+.dir-k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.dir-v{font-size:15px}
+.dir-v a{color:var(--blue);border-bottom:1px solid rgba(0,47,167,.3);transition:border-color .15s}
+.dir-v a:hover{border-color:var(--blue)}
+.dir-sep{color:var(--hair);margin:0 10px}
+
+/* footer */
+footer{border-top:1px solid var(--ink);padding:34px 0 48px}
+.foot-in{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.foot-in a{color:var(--muted);transition:color .15s}
+.foot-in a:hover{color:var(--blue)}
+
+/* 入场动效 */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media(max-width:860px){
+  .hero-grid{grid-template-columns:1fr;gap:32px}
+  .hero{padding:56px 0 48px}
+  .work-main{grid-template-columns:1fr}
+  .work-main img{min-height:0;aspect-ratio:16/10}
+  .work-duo{grid-template-columns:1fr}
+  .dir-row{grid-template-columns:120px 1fr}
+  section{padding:60px 0}
+  .nav{gap:14px}
+}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div class="eyebrow"><span>Cobb Hu</span><span>Personal Site</span></div>
-  <h1>13F<br>Smart Money</h1>
-  <p class="sub">Creator commerce, US TikTok Shop, DTC e-commerce, SEC data tools — data-driven, bilingual.</p>
-  <p class="lang">数据驱动的创作者电商 · 中文 / English</p>
-  <div class="grid">
-    <a class="card" href="https://letobtc100-hodl.github.io/13f-dashboard/">
-      <div class="tag">Research Tool</div>
-      <h2>13F 聪明钱工作台</h2>
-      <p>20 家华尔街头部机构 × 4 季度真实持仓 · SEC 免费数据 · 中英文切换</p>
-      <div class="go">打开看板 →</div>
-    </a>
-    <a class="card" href="https://letobtc100-hodl.github.io/portfolio/">
-      <div class="tag">Portfolio</div>
-      <h2>Creator Commerce</h2>
-      <p>US TikTok Shop creator engine（200+ 创作者）· DTC 独立站 · USC MSBA</p>
-      <div class="go">查看作品集 →</div>
-    </a>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#top">Cobb Hu<span class="b-dot">.</span></a>
+    <nav class="nav">
+      <a href="#work" data-zh="项目" data-en="Work">项目</a>
+      <a href="#about" data-zh="关于" data-en="About">关于</a>
+      <button class="lang-btn" id="lang-btn" type="button">EN</button>
+    </nav>
   </div>
-  <div class="foot"><a href="https://github.com/letobtc100-hodl">GitHub</a><a href="mailto:cobblhu36@163.com">Email</a><span>© 2026 Cobb Hu</span></div>
-</div>
+</header>
+
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal in">
+        <h1 data-zh="Cobb Hu" data-en="Cobb Hu">Cobb Hu</h1>
+        <p class="role" data-zh="数据工具，聚焦美股、加密与 AI 投研"
+           data-en="Data tools for equities, crypto &amp; AI research">数据工具，聚焦美股、加密与 AI 投研</p>
+      </div>
+      <div class="hero-right reveal in">
+        <p class="bio" data-zh="数据驱动。用 SEC 数据追踪机构持仓，用 ETF 资金流观测加密市场，用 AI 加速投研。中英双语。"
+           data-en="Data-driven. Tracking institutional holdings via SEC data, crypto flows via ETF data, and accelerating research with AI. Bilingual.">数据驱动。用 SEC 数据追踪机构持仓，用 ETF 资金流观测加密市场，用 AI 加速投研。中英双语。</p>
+        <div class="ctas">
+          <a class="btn btn-primary" href="#work" data-zh="看项目" data-en="View work">看项目</a>
+          <a class="btn btn-ghost" href="mailto:cobblhu36@163.com" data-zh="联系我" data-en="Contact">联系我</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">SELECTED WORK</div>
+    </div>
+
+    <a class="work-main reveal" href="https://letobtc100-hodl.github.io/13f-dashboard/">
+      <img src="images/work-13f.png" alt="13F 聪明钱工作台截图">
+      <div class="work-txt">
+        <div>
+          <div class="work-tag" data-zh="Equities / SEC / 季度更新" data-en="Equities / SEC / Quarterly">Equities / SEC / Quarterly</div>
+          <h3 class="work-name" data-zh="13F 聪明钱工作台" data-en="13F Smart Money Dashboard">13F 聪明钱工作台</h3>
+          <p class="work-desc" data-zh="20 家华尔街头部机构真实持仓，SEC 免费数据，季度自动更新，中英切换。"
+             data-en="Real holdings of 20 leading Wall Street funds from free SEC data, auto-updated quarterly.">20 家华尔街头部机构真实持仓，SEC 免费数据，季度自动更新，中英切换。</p>
+        </div>
+        <span class="work-go" data-zh="打开看板" data-en="Open">打开看板 <span class="arr">→</span></span>
+      </div>
+    </a>
+
+    <div class="work-duo">
+      <a class="tile reveal" href="https://letobtc100-hodl.github.io/letoflow/">
+        <img src="images/work-letoflow.png" alt="letoflow 机构资金流看板截图">
+        <div class="work-txt">
+          <div>
+            <div class="work-tag" data-zh="Crypto / ETF / 每日更新" data-en="Crypto / ETF / Daily">Crypto / ETF / Daily</div>
+            <h3 class="work-name" data-zh="letoflow 机构资金流" data-en="letoflow ETF Flows">letoflow 机构资金流</h3>
+            <p class="work-desc" data-zh="BTC/ETH 现货 ETF 每日净流、恐慌贪婪指数、实时行情，每日自动更新。"
+               data-en="Daily net flows of BTC/ETH spot ETFs, fear and greed index, live quotes, updated daily.">BTC/ETH 现货 ETF 每日净流、恐慌贪婪指数、实时行情，每日自动更新。</p>
+          </div>
+          <span class="work-go" data-zh="打开看板" data-en="Open">打开看板 <span class="arr">→</span></span>
+        </div>
+      </a>
+      <a class="tile reveal" href="https://letobtc100-hodl.github.io/portfolio/">
+        <img src="images/work-commerce.png" alt="Creator Commerce 案例截图">
+        <div class="work-txt">
+          <div>
+            <div class="work-tag" data-zh="Case Study" data-en="Case Study">Case Study</div>
+            <h3 class="work-name" data-zh="Creator Commerce" data-en="Creator Commerce">Creator Commerce</h3>
+            <p class="work-desc" data-zh="US TikTok Shop 创作者引擎，200+ 创作者，从 0 到 1 的实战案例。"
+               data-en="US TikTok Shop creator engine with 200+ creators, built from zero.">US TikTok Shop 创作者引擎，200+ 创作者，从 0 到 1 的实战案例。</p>
+          </div>
+          <span class="work-go" data-zh="查看案例" data-en="View">查看案例 <span class="arr">→</span></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="wrap">
+    <div class="sec-head reveal">
+      <h2 data-zh="关于" data-en="About">关于</h2>
+    </div>
+    <div class="dir reveal">
+      <div class="dir-row">
+        <div class="dir-k" data-zh="Focus" data-en="Focus">Focus</div>
+        <div class="dir-v" data-zh="金融数据 / 美股 / 加密 ETF / AI 投研" data-en="Finance data / Equities / Crypto ETF / AI research">金融数据 / 美股 / 加密 ETF / AI 投研</div>
+      </div>
+      <div class="dir-row">
+        <div class="dir-k" data-zh="Now" data-en="Now">Now</div>
+        <div class="dir-v" data-zh="用 AI Agent 自动化投研：13F 持仓、ETF 资金流、估值框架"
+           data-en="Automating investment research with AI agents: 13F filings, ETF flows, valuation frameworks">用 AI Agent 自动化投研：13F 持仓、ETF 资金流、估值框架</div>
+      </div>
+      <div class="dir-row">
+        <div class="dir-k" data-zh="Education" data-en="Education">Education</div>
+        <div class="dir-v" data-zh="USC MSBA / Emory" data-en="USC MSBA / Emory">USC MSBA / Emory</div>
+      </div>
+      <div class="dir-row">
+        <div class="dir-k" data-zh="Languages" data-en="Languages">Languages</div>
+        <div class="dir-v" data-zh="中文 / English" data-en="Chinese / English">中文 / English</div>
+      </div>
+      <div class="dir-row">
+        <div class="dir-k" data-zh="Contact" data-en="Contact">Contact</div>
+        <div class="dir-v">
+          <a href="mailto:cobblhu36@163.com">cobblhu36@163.com</a><span class="dir-sep">/</span>
+          <a href="https://github.com/letobtc100-hodl" data-zh="GitHub" data-en="GitHub">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <span>© 2026 Cobb Hu</span>
+    <span>
+      <a href="https://github.com/letobtc100-hodl">GitHub</a>
+      <span class="dir-sep">/</span>
+      <a href="mailto:cobblhu36@163.com">Email</a>
+    </span>
+  </div>
+</footer>
+
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+<script>
+var zh = document.documentElement.lang === 'zh-CN';
+function toggleLang(){
+  zh = !zh;
+  document.documentElement.lang = zh ? 'zh-CN' : 'en';
+  document.querySelectorAll('[data-zh]').forEach(function(el){
+    el.textContent = zh ? el.getAttribute('data-zh') : el.getAttribute('data-en');
+  });
+  document.getElementById('lang-btn').textContent = zh ? 'EN' : '中';
+}
+document.getElementById('lang-btn').addEventListener('click', toggleLang);
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+} else {
+  document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+}
+</script>
 </body>
 </html>
