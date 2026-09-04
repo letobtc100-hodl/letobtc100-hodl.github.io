@@ -3,115 +3,156 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Cobb Hu - data tools for equities, crypto and AI. SEC 13F, ETF flows, AI-powered research.">
-<meta property="og:title" content="Cobb Hu · Equities · Crypto · AI">
-<meta property="og:description" content="Data tools for equities, crypto and AI research. Bilingual.">
+<meta name="description" content="Cobb Hu — independent investment research with data & AI. SEC 13F holdings, ETF flows, AI research workflows.">
+<meta property="og:title" content="Cobb Hu · Research · AI">
+<meta property="og:description" content="Independent research on global capital markets with data and AI. Bilingual.">
 <meta property="og:image" content="https://letobtc100-hodl.github.io/images/work-13f.png">
-<title>Cobb Hu · Equities · Crypto · AI</title>
+<title>Cobb Hu · Research · AI Finance</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400..900;1,400..900&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@600&display=swap" rel="stylesheet">
 <style>
-:root{--blue:#002FA7;--ink:#111;--muted:#6b6b6b;--hair:#e6e6e6;--bg:#fff;
---sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Helvetica,"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
---mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Cascadia Code",monospace;}
-*{margin:0;padding:0;box-sizing:border-box;border-radius:0!important}
+/* Citadel / Citadel Securities tokens — measured from production CSS (citadelsecurities.com, citadel.com) */
+:root{
+  --navy:#08225A;          /* blue-dark: brand, nav text, hero, footer */
+  --navy-ink:#04102F;      /* hero far end */
+  --blue:#144AA5;          /* blue-primary */
+  --cyan:#6EE8E9;          /* accent — structural lines only */
+  --ink:#101213;
+  --body:#373A3C;          /* rgb(55,58,60) measured body */
+  --gray:#68717A;
+  --gray-2:#989CA1;
+  --line:#E2E5E9;
+  --line-soft:#EEF0F3;
+  --white:#fff;
+  --sans:"Archivo","Noto Sans SC",-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  --serif:"Newsreader","Noto Serif SC",Georgia,"Songti SC",serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;border-radius:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+body{font-family:var(--sans);color:var(--body);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased;font-size:16px}
 a{text-decoration:none;color:inherit}
 img{display:block;max-width:100%}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 
-/* 顶栏 */
-.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--hair)}
-.top-in{max-width:1180px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;justify-content:space-between}
-.brand{font-size:15px;font-weight:800;letter-spacing:-.01em}
-.brand .b-dot{color:var(--blue)}
-.nav{display:flex;align-items:center;gap:22px}
-.nav a{font-size:13px;color:var(--muted);transition:color .15s}
+/* ============ header — CitSec: white, tall, navy 18px nav ============ */
+.top{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,.98)}
+.top-in{max-width:1180px;margin:0 auto;padding:34px 28px 30px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:inline-flex;align-items:center;gap:13px;color:var(--navy)}
+.brand .mark{width:13px;height:13px;background:var(--navy);position:relative;display:inline-block}
+.brand .mark i{position:absolute;right:0;bottom:0;width:5px;height:5px;background:var(--cyan)}
+.brand b{font-weight:800;font-size:18px;letter-spacing:.18em}
+.nav{display:flex;align-items:center;gap:38px}
+.nav a{font-size:18px;font-weight:500;color:var(--navy);transition:color .15s}
+html[lang="zh-CN"] .nav a{font-weight:600}
 .nav a:hover{color:var(--blue)}
-.lang-btn{border:1px solid var(--hair);background:var(--bg);font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding:5px 10px;cursor:pointer;color:var(--ink);transition:all .15s}
-.lang-btn:hover{border-color:var(--blue);color:var(--blue)}
+.lang-btn{background:none;border:none;cursor:pointer;font-family:var(--sans);font-size:15px;font-weight:500;color:var(--gray);letter-spacing:.08em;padding:4px 2px;transition:color .15s}
+.lang-btn:hover{color:var(--navy)}
 
-/* hero */
-.hero{position:relative;overflow:hidden;padding:88px 0 72px;border-bottom:1px solid var(--ink)}
-.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:7fr 5fr;gap:56px;align-items:start}
-h1{font-size:clamp(56px,9vw,112px);font-weight:800;letter-spacing:-.04em;line-height:.95;color:var(--blue)}
-.role{margin-top:22px;font-size:17px;font-weight:600}
-.hero-right{padding-top:14px}
-.bio{font-size:15px;color:var(--muted);max-width:34ch}
-.ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-.btn{display:inline-block;padding:11px 22px;font-size:14px;font-weight:700;border:1px solid var(--ink);transition:all .18s}
-.btn-primary{background:var(--blue);border-color:var(--blue);color:#fff}
-.btn-primary:hover{background:#001f77;border-color:#001f77}
-.btn-ghost:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+/* ============ hero — navy statement, restrained ============ */
+.hero{position:relative;background:
+  radial-gradient(1100px 560px at 16% -10%, rgba(85,143,240,.22) 0%, rgba(85,143,240,0) 62%),
+  linear-gradient(168deg,var(--navy) 0%,var(--navy-ink) 135%);
+  color:var(--white);padding:236px 0 96px}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(130% 100% at 50% 30%, transparent 52%, rgba(1,5,18,.35) 100%)}
+.hero-in{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 28px;border-left:3px solid var(--cyan);padding-left:66px}
+.hero-eyebrow{font-size:13px;font-weight:500;letter-spacing:.32em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:38px}
+.hero h1{font-size:clamp(40px,5.4vw,68px);font-weight:600;letter-spacing:-.02em;line-height:1.16;color:var(--white);max-width:14em}
+html[lang="en"] .hero h1{font-weight:500;line-height:1.08;letter-spacing:-.025em;max-width:20em}
+.hero .sub{margin-top:28px;font-size:15px;line-height:1.9;color:rgba(255,255,255,.55);max-width:50ch}
+.ctas{margin-top:44px;display:flex;align-items:center;gap:30px}
+.link-arrow{display:inline-flex;align-items:center;gap:12px;font-size:16px;font-weight:500;color:var(--white);padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,.4);transition:color .15s,border-color .15s}
+.link-arrow .arr{transition:transform .18s}
+.link-arrow:hover{color:var(--cyan);border-color:var(--cyan)}
+.link-arrow:hover .arr{transform:translateX(4px)}
+.link-mail{font-size:14px;color:rgba(255,255,255,.5);transition:color .15s}
+.link-mail:hover{color:var(--white)}
 
-/* 章节 */
-section{padding:84px 0}
-.sec-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px}
-.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
-h2{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.05}
+/* ============ data bar (white, hairline) ============ */
+.databar{background:var(--white);border-bottom:1px solid var(--line)}
+.databar-in{max-width:1180px;margin:0 auto;padding:0 28px;display:grid;grid-template-columns:repeat(3,1fr)}
+.db-cell{padding:22px 26px;border-left:1px solid var(--line-soft)}
+.db-cell:first-child{border-left:none;padding-left:0}
+.db-cell b{display:block;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.db-cell span{display:block;font-size:12px;color:var(--gray);margin-top:5px}
 
-/* 项目一：通栏分栏 */
-.work-main{display:grid;grid-template-columns:1.15fr 1fr;border:1px solid var(--ink);margin-bottom:18px;background:var(--bg)}
-.work-main img{width:100%;height:100%;object-fit:cover;min-height:340px}
-.work-txt{padding:36px 32px;display:flex;flex-direction:column;justify-content:space-between;gap:22px}
-.work-tag{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
-.work-name{font-size:24px;font-weight:800;letter-spacing:-.01em;margin-top:10px}
-.work-desc{font-size:14px;color:var(--muted);margin-top:10px;max-width:42ch}
-.work-go{font-size:13px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:8px}
+/* ============ sections ============ */
+main{padding-top:0}
+section{padding:100px 0;scroll-margin-top:110px}
+.sec-head{margin-bottom:46px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--gray-2)}
+h2{font-size:clamp(26px,3.4vw,42px);font-weight:600;letter-spacing:-.02em;line-height:1.12;color:var(--ink);margin-top:16px}
+
+/* ============ work ============ */
+.work-main{display:grid;grid-template-columns:1.15fr 1fr;border:1px solid var(--line);background:var(--white);margin-bottom:20px;transition:background .22s,border-color .22s}
+.work-main img{width:100%;height:100%;min-height:340px;object-fit:cover;object-position:top}
+.work-txt{padding:44px 40px;display:flex;flex-direction:column;justify-content:space-between;gap:26px}
+.work-tag{font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gray)}
+.work-name{font-size:24px;font-weight:600;letter-spacing:-.01em;color:var(--ink);margin-top:14px}
+.work-desc{font-size:15px;color:var(--gray);margin-top:12px;max-width:46ch;line-height:1.75}
+.work-go{font-size:14px;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:8px}
 .work-go .arr{transition:transform .18s}
+.work-main:hover,.tile:hover{background:var(--navy);border-color:var(--navy)}
+.work-main:hover .work-txt *,.tile:hover .work-txt *{color:var(--white)}
+.work-main:hover .work-tag,.tile:hover .work-tag{color:var(--cyan-soft,#9BEFF0)}
+.work-main:hover .work-desc,.tile:hover .work-desc{color:rgba(255,255,255,.78)}
+.work-main:hover .work-go,.tile:hover .work-go{color:var(--cyan)}
 .work-main:hover .work-go .arr,.tile:hover .work-go .arr{transform:translateX(4px)}
-
-/* 项目二三：双列 */
-.work-duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-.tile{border:1px solid var(--ink);background:var(--bg);display:flex;flex-direction:column}
-.tile img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--hair)}
-.tile .work-txt{padding:26px 26px 30px;flex:1}
+.work-main:hover img,.tile:hover img{opacity:.9}
+.work-duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.tile{border:1px solid var(--line);background:var(--white);display:flex;flex-direction:column;transition:background .22s,border-color .22s}
+.tile img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top;border-bottom:1px solid var(--line-soft)}
+.tile .work-txt{padding:28px 28px 32px;flex:1}
 .tile .work-name{font-size:20px}
 
-/* 悬停克莱因蓝填充（品牌签名交互） */
-.work-main,.tile{transition:background .22s,color .22s}
-.work-main:hover,.tile:hover{background:var(--blue)}
-.work-main:hover .work-txt *,.tile:hover .work-txt *{color:#fff}
-.work-main:hover .work-tag,.tile:hover .work-tag{color:#9db4e8}
-.work-main:hover .work-go,.tile:hover .work-go{color:#fff}
-.work-main:hover img,.tile:hover img{opacity:.9}
-
-/* about 瑞士目录 */
-.dir{border-top:1px solid var(--ink)}
-.dir-row{display:grid;grid-template-columns:220px 1fr;padding:20px 0;border-bottom:1px solid var(--hair)}
+/* ============ about ============ */
+.dir{border-top:1px solid var(--navy)}
+.dir-row{display:grid;grid-template-columns:230px 1fr;padding:24px 0;border-bottom:1px solid var(--line-soft)}
 .dir-row:last-child{border-bottom:none}
-.dir-k{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:3px}
-.dir-v{font-size:15px}
-.dir-v a{color:var(--blue);border-bottom:1px solid rgba(0,47,167,.3);transition:border-color .15s}
-.dir-v a:hover{border-color:var(--blue)}
-.dir-sep{color:var(--hair);margin:0 10px}
+.dir-k{font-size:12px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gray);padding-top:5px}
+.dir-v{font-size:16px;color:var(--ink)}
+.dir-v a{color:var(--blue);border-bottom:1px solid rgba(20,74,165,.3);transition:border-color .15s,color .15s}
+.dir-v a:hover{border-bottom-color:var(--cyan);color:var(--navy)}
+.dir-sep{color:var(--line);margin:0 10px}
 
-/* footer */
-footer{border-top:1px solid var(--ink);padding:34px 0 48px}
-.foot-in{max-width:1180px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
-.foot-in a{color:var(--muted);transition:color .15s}
-.foot-in a:hover{color:var(--blue)}
+/* ============ footer ============ */
+footer{background:var(--navy);color:rgba(255,255,255,.55)}
+.foot-in{max-width:1180px;margin:0 auto;padding:46px 28px 52px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px}
+.foot-brand{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:13px;letter-spacing:.2em;color:rgba(255,255,255,.9)}
+.foot-brand i{width:9px;height:9px;background:var(--cyan);display:inline-block}
+.foot-in a{color:rgba(255,255,255,.55);transition:color .15s}
+.foot-in a:hover{color:var(--cyan)}
 
-/* 入场动效 */
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+/* ============ entrance ============ */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 
-@media(max-width:860px){
-  .hero-grid{grid-template-columns:1fr;gap:32px}
-  .hero{padding:56px 0 48px}
+@media(max-width:960px){
+  .top-in{padding:20px 18px;gap:12px}
+  .top-in,.wrap,.hero-in,.databar-in{max-width:100%}
+  .nav{gap:18px}
+  .nav a{font-size:15px}
+  .brand b{font-size:15px}
+  .hero{padding:170px 0 70px}
+  .hero-in{padding-left:28px}
+  .hero .sub{font-size:15px}
+  .databar-in{grid-template-columns:1fr}
+  .db-cell{border-left:none;border-top:1px solid var(--line-soft);padding:16px 2px}
+  .db-cell:first-child{border-top:none}
   .work-main{grid-template-columns:1fr}
   .work-main img{min-height:0;aspect-ratio:16/10}
   .work-duo{grid-template-columns:1fr}
   .dir-row{grid-template-columns:120px 1fr}
-  section{padding:60px 0}
-  .nav{gap:14px}
+  section{padding:66px 0}
+  .ctas{flex-direction:column;align-items:flex-start;gap:22px}
 }
 </style>
 </head>
 <body>
 <header class="top">
   <div class="top-in">
-    <a class="brand" href="#top">Cobb Hu<span class="b-dot">.</span></a>
+    <a class="brand" href="#top"><span class="mark"><i></i></span><b>COBB&nbsp;HU</b></a>
     <nav class="nav">
       <a href="#work" data-zh="项目" data-en="Work">项目</a>
       <a href="#about" data-zh="关于" data-en="About">关于</a>
@@ -121,41 +162,55 @@ footer{border-top:1px solid var(--ink);padding:34px 0 48px}
 </header>
 
 <main id="top">
-  <!-- Hero -->
+  <!-- Hero: navy statement band -->
   <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="reveal in">
-        <h1 data-zh="Cobb Hu" data-en="Cobb Hu">Cobb Hu</h1>
-        <p class="role" data-zh="数据工具，聚焦美股、加密与 AI 投研"
-           data-en="Data tools for equities, crypto &amp; AI research">数据工具，聚焦美股、加密与 AI 投研</p>
-      </div>
-      <div class="hero-right reveal in">
-        <p class="bio" data-zh="数据驱动。用 SEC 数据追踪机构持仓，用 ETF 资金流观测加密市场，用 AI 加速投研。中英双语。"
-           data-en="Data-driven. Tracking institutional holdings via SEC data, crypto flows via ETF data, and accelerating research with AI. Bilingual.">数据驱动。用 SEC 数据追踪机构持仓，用 ETF 资金流观测加密市场，用 AI 加速投研。中英双语。</p>
-        <div class="ctas">
-          <a class="btn btn-primary" href="#work" data-zh="看项目" data-en="View work">看项目</a>
-          <a class="btn btn-ghost" href="mailto:cobblhu36@163.com" data-zh="联系我" data-en="Contact">联系我</a>
-        </div>
+    <div class="hero-in">
+      <div class="hero-eyebrow" data-zh="投资研究 · AI" data-en="Investment Research · AI">投资研究 · AI</div>
+      <h1 data-zh="用数据与 AI，研究全球资本市场。"
+          data-en="Researching global capital markets with data &amp; AI.">用数据与 AI，研究全球资本市场。</h1>
+      <p class="sub" data-zh="独立投研：13F 机构持仓 · ETF 资金流 · AI 工作流。"
+         data-en="Independent research: 13F holdings · ETF flows · AI workflows.">独立投研：13F 机构持仓 · ETF 资金流 · AI 工作流。</p>
+      <div class="ctas">
+        <a class="link-arrow" href="#work" data-zh="研究项目" data-en="View research">研究项目 <span class="arr">→</span></a>
+        <a class="link-mail" href="mailto:cobblhu36@163.com" data-zh="cobblhu36@163.com" data-en="cobblhu36@163.com">cobblhu36@163.com</a>
       </div>
     </div>
   </section>
 
+  <!-- Data bar -->
+  <div class="databar">
+    <div class="databar-in">
+      <div class="db-cell">
+        <b>SEC 13F</b>
+        <span data-zh="机构持仓追踪" data-en="Institutional holdings">机构持仓追踪</span>
+      </div>
+      <div class="db-cell">
+        <b>ETF FLOWS</b>
+        <span data-zh="加密资金方向" data-en="Crypto fund flows">加密资金方向</span>
+      </div>
+      <div class="db-cell">
+        <b>AI AGENT</b>
+        <span data-zh="研究工作流" data-en="Research workflows">研究工作流</span>
+      </div>
+    </div>
+  </div>
+
   <!-- Work -->
   <section id="work" class="wrap">
     <div class="sec-head reveal">
-      <div class="eyebrow">SELECTED WORK</div>
+      <div class="eyebrow">SELECTED&nbsp;WORK</div>
     </div>
 
     <a class="work-main reveal" href="https://letobtc100-hodl.github.io/13f-dashboard/">
       <img src="images/work-13f.png" alt="13F 聪明钱工作台截图">
       <div class="work-txt">
         <div>
-          <div class="work-tag" data-zh="Equities / SEC / 季度更新" data-en="Equities / SEC / Quarterly">Equities / SEC / Quarterly</div>
+          <div class="work-tag" data-zh="Equities / SEC" data-en="Equities / SEC">Equities / SEC</div>
           <h3 class="work-name" data-zh="13F 聪明钱工作台" data-en="13F Smart Money Dashboard">13F 聪明钱工作台</h3>
-          <p class="work-desc" data-zh="20 家华尔街头部机构真实持仓，SEC 免费数据，季度自动更新，中英切换。"
-             data-en="Real holdings of 20 leading Wall Street funds from free SEC data, auto-updated quarterly.">20 家华尔街头部机构真实持仓，SEC 免费数据，季度自动更新，中英切换。</p>
+          <p class="work-desc" data-zh="20 家华尔街头部机构真实持仓的研究看板，数据源为 SEC。"
+             data-en="A research dashboard on the real holdings of 20 leading Wall Street funds, sourced from SEC filings.">20 家华尔街头部机构真实持仓的研究看板，数据源为 SEC。</p>
         </div>
-        <span class="work-go" data-zh="打开看板" data-en="Open">打开看板 <span class="arr">→</span></span>
+        <span class="work-go" data-zh="查看" data-en="Open">查看 <span class="arr">→</span></span>
       </div>
     </a>
 
@@ -164,12 +219,12 @@ footer{border-top:1px solid var(--ink);padding:34px 0 48px}
         <img src="images/work-letoflow.png" alt="letoflow 机构资金流看板截图">
         <div class="work-txt">
           <div>
-            <div class="work-tag" data-zh="Crypto / ETF / 每日更新" data-en="Crypto / ETF / Daily">Crypto / ETF / Daily</div>
+            <div class="work-tag" data-zh="Crypto / ETF" data-en="Crypto / ETF">Crypto / ETF</div>
             <h3 class="work-name" data-zh="letoflow 机构资金流" data-en="letoflow ETF Flows">letoflow 机构资金流</h3>
-            <p class="work-desc" data-zh="BTC/ETH 现货 ETF 每日净流、恐慌贪婪指数、实时行情，每日自动更新。"
-               data-en="Daily net flows of BTC/ETH spot ETFs, fear and greed index, live quotes, updated daily.">BTC/ETH 现货 ETF 每日净流、恐慌贪婪指数、实时行情，每日自动更新。</p>
+            <p class="work-desc" data-zh="以 BTC/ETH 现货 ETF 每日净流与恐慌贪婪指数观察加密市场资金方向。"
+               data-en="Reading crypto market direction through daily BTC/ETH spot ETF net flows and sentiment indices.">以 BTC/ETH 现货 ETF 每日净流与恐慌贪婪指数观察加密市场资金方向。</p>
           </div>
-          <span class="work-go" data-zh="打开看板" data-en="Open">打开看板 <span class="arr">→</span></span>
+          <span class="work-go" data-zh="查看" data-en="Open">查看 <span class="arr">→</span></span>
         </div>
       </a>
       <a class="tile reveal" href="https://letobtc100-hodl.github.io/portfolio/">
@@ -178,8 +233,8 @@ footer{border-top:1px solid var(--ink);padding:34px 0 48px}
           <div>
             <div class="work-tag" data-zh="Case Study" data-en="Case Study">Case Study</div>
             <h3 class="work-name" data-zh="Creator Commerce" data-en="Creator Commerce">Creator Commerce</h3>
-            <p class="work-desc" data-zh="US TikTok Shop 创作者引擎，200+ 创作者，从 0 到 1 的实战案例。"
-               data-en="US TikTok Shop creator engine with 200+ creators, built from zero.">US TikTok Shop 创作者引擎，200+ 创作者，从 0 到 1 的实战案例。</p>
+            <p class="work-desc" data-zh="一次从 0 到 1 的跨境电商实战：US TikTok Shop 创作者引擎，200+ 创作者。"
+               data-en="A zero-to-one cross-border e-commerce build: a US TikTok Shop creator engine with 200+ creators.">一次从 0 到 1 的跨境电商实战：US TikTok Shop 创作者引擎，200+ 创作者。</p>
           </div>
           <span class="work-go" data-zh="查看案例" data-en="View">查看案例 <span class="arr">→</span></span>
         </div>
@@ -190,17 +245,18 @@ footer{border-top:1px solid var(--ink);padding:34px 0 48px}
   <!-- About -->
   <section id="about" class="wrap">
     <div class="sec-head reveal">
+      <div class="eyebrow">PROFILE</div>
       <h2 data-zh="关于" data-en="About">关于</h2>
     </div>
     <div class="dir reveal">
       <div class="dir-row">
         <div class="dir-k" data-zh="Focus" data-en="Focus">Focus</div>
-        <div class="dir-v" data-zh="金融数据 / 美股 / 加密 ETF / AI 投研" data-en="Finance data / Equities / Crypto ETF / AI research">金融数据 / 美股 / 加密 ETF / AI 投研</div>
+        <div class="dir-v" data-zh="投资研究 / 美股 / 加密 ETF / AI 金融" data-en="Research / Equities / Crypto ETF / AI in finance">投资研究 / 美股 / 加密 ETF / AI 金融</div>
       </div>
       <div class="dir-row">
         <div class="dir-k" data-zh="Now" data-en="Now">Now</div>
-        <div class="dir-v" data-zh="用 AI Agent 自动化投研：13F 持仓、ETF 资金流、估值框架"
-           data-en="Automating investment research with AI agents: 13F filings, ETF flows, valuation frameworks">用 AI Agent 自动化投研：13F 持仓、ETF 资金流、估值框架</div>
+        <div class="dir-v" data-zh="用 AI Agent 做投研：13F 持仓、ETF 资金流、估值框架"
+           data-en="Doing research with AI agents: 13F filings, ETF flows, valuation frameworks">用 AI Agent 做投研：13F 持仓、ETF 资金流、估值框架</div>
       </div>
       <div class="dir-row">
         <div class="dir-k" data-zh="Education" data-en="Education">Education</div>
@@ -223,12 +279,8 @@ footer{border-top:1px solid var(--ink);padding:34px 0 48px}
 
 <footer>
   <div class="foot-in">
-    <span>© 2026 Cobb Hu</span>
-    <span>
-      <a href="https://github.com/letobtc100-hodl">GitHub</a>
-      <span class="dir-sep">/</span>
-      <a href="mailto:cobblhu36@163.com">Email</a>
-    </span>
+    <span class="foot-brand"><i></i>COBB&nbsp;HU</span>
+    <span>© 2026 Cobb Hu · <a href="https://github.com/letobtc100-hodl">GitHub</a><span class="dir-sep">/</span><a href="mailto:cobblhu36@163.com">Email</a></span>
   </div>
 </footer>
 
